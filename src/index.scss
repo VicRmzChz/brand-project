@@ -1,0 +1,202 @@
+body {
+    margin: 1.5em;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+/* HEADER */
+
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("./images/shoe.jpg");
+    background-size: cover;
+    background-position-x: 20%;
+    background-position-y: 20%;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+}
+
+nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: white;
+    height: 100vh;
+    width: 50%;
+    z-index: 999;
+    text-transform: uppercase;
+    transform: translateX(100%);
+    transition: transform .5s ease-in-out;
+
+    .close {
+        float: right;
+        font-size: 2.5em;
+        margin: 1em 0em;
+        width: 2.5em;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 8em;
+
+        a {
+            color: black;
+            padding: .75em 2em;
+            display: block;
+
+            &:hover {
+                background-color: rgb(226, 223, 223);
+            }
+        }
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+    .menu {
+        width: 3em;
+        margin-top: -.6em;
+        cursor: pointer;
+    }
+}
+
+/*END HEADER*/
+
+/* MAIN */
+
+.hero {
+    color: white;
+    height: 90vh;
+
+    h1 {
+        font-size: 3rem;
+        margin-top: 2em;
+        line-height: 3.3rem;
+    }
+
+    .subhead {
+        font-size: 1.4rem;
+    }
+
+    .down-arrow {
+        stroke: white;
+        position: absolute;
+        bottom: 2em;
+        width: 1em;
+
+        path {
+            fill: white;
+        }
+    }
+}
+
+/* END MAIN */
+
+/* MORE-INFO */
+
+.more-info {
+    img {
+        width: 100%;
+        object-fit: cover;
+        height: 11em;
+    }
+
+    .title {
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
+
+    .desc {
+        line-height: 1.5rem;
+    }
+}
+
+/* END MORE-INFO */
+
+@media only screen and (min-width: 920px) {
+    body {
+        margin: 1.5em 5em;
+        font-family: 'Poppins', sans-serif;
+    }
+}
+
+@media only screen and (min-width: 680px) {
+    .menu {
+        display: none;
+    }
+
+    nav {
+        transform: translateX(0);
+        position: unset;
+        display: block;
+        height: auto;
+        width: auto;
+        background: none;
+
+        .close {
+            display: none;
+        }
+
+        ul {
+            display: flex;
+            margin: 0;
+
+            a {
+                color: white;
+                padding: .5em 1.5em;
+                font-size: .9rem;
+
+                &:hover {
+                    background: none;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .hero-img {
+        left: unset;
+        right: 0;
+        width: 50%;
+        height: 42em;
+    }
+
+    .logo {
+        color: black;
+
+        span {
+            color: red;
+        }
+    }
+
+    .hero {
+        color: black;
+        height: auto;
+        width: 40%;
+        margin-bottom: 8em;
+
+        .down-arrow {
+            stroke: black;
+            position: unset;
+
+            path {
+                fill: black;
+            }
+        }
+    }
+}
