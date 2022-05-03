@@ -21,6 +21,7 @@ a {
     width: 100%;
     height: 100vh;
     z-index: -1;
+    animation: introLoad 2s forwards;
 }
 
 .logo {
@@ -82,6 +83,8 @@ header {
 .hero {
     color: white;
     height: 90vh;
+    animation: moveDown 1s ease-in-out forwards;
+    opacity: 0;
 
     h1 {
         font-size: 3rem;
@@ -98,6 +101,7 @@ header {
         position: absolute;
         bottom: 2em;
         width: 1em;
+        animation: moveArrow 1s alternate-reverse infinite;
 
         path {
             fill: white;
@@ -128,14 +132,14 @@ header {
 
 /* END MORE-INFO */
 
-@media only screen and (min-width: 920px) {
+@media only screen and (min-width: 680px) {
     body {
         margin: 1.5em 5em;
         font-family: 'Poppins', sans-serif;
     }
 }
 
-@media only screen and (min-width: 680px) {
+@media only screen and (min-width: 920px) {
     .menu {
         display: none;
     }
@@ -198,5 +202,77 @@ header {
                 fill: black;
             }
         }
+    }
+
+    .feature {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 3em;
+        margin-bottom: 8em;
+
+        img {
+            width: 25em;
+        }
+
+        .content {
+            text-align: right;
+            width: 25em;
+        }
+    }
+
+    .feature.left {
+        grid-template-areas: "left right";
+
+        img {
+            grid-area: left;
+        }
+
+        .content {
+            text-align: left;
+            width: 25em;
+            justify-self: left;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .wrapper {
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    .feature {
+        gap: 0;
+    }
+}
+
+@keyframes introLoad {
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes moveArrow {
+    from {
+        transform: translateY(-30px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveDown {
+    from {
+        transform: translateY(-100px);
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
